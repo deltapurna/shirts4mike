@@ -16,7 +16,8 @@
  ?>
 
 <?php 
-	$title = "Contact"; 
+	$title = "Contact";
+	$section = "contact";
 	include('inc/header.php'); 
 ?>
 	<div class="section page">
