@@ -1,24 +1,23 @@
-<?php include 'inc/products.php'; ?>
+<?php include("inc/products.php"); ?><?php 
+$pageTitle = "Mike's Full Catalog of Shirts";
+$section = "shirts";
+include('inc/header.php'); ?>
 
-<?php 
-	$title = "Catalogs"; 
-	$section = "shirts";
-	include('inc/header.php'); 
-?>
-	<div class="section shirts page">
-		<div class="wrapper">
-			<h1>Mike's Full Catalog of Shirts</h1>
-			<ul class="products">
-				<?php foreach ($products as $key => $product) { 
-						echo '<li>';
-						echo '<a href="shirt.php?id='.$key.'">';
-						echo '<img src="' . $product["img"] . '" alt="' . $product["name"] . '">';
-						echo '<p>View Details</p>';
-						echo '</a>';
-						echo '</li>';
-					}
-				?>
-			</ul>
+		<div class="section shirts page">
+
+			<div class="wrapper">
+
+				<h1>Mike&rsquo;s Full Catalog of Shirts</h1>
+
+				<ul class="products">
+					<?php foreach($products as $product_id => $product) { 
+							echo get_list_view_html($product_id,$product);
+						}
+					?>
+				</ul>
+
+			</div>
+
 		</div>
-	</div>
-<?php include('inc/footer.php'); ?>
+
+<?php include('inc/footer.php') ?>
